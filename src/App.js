@@ -41,19 +41,92 @@ function getItem(label, key, icon, children) {
 
 
 const items = [
-  getItem('ມ.1', '1', <UserOutlined />,[getItem('Team 11', '9', <PieChartOutlined />, [getItem("ຊັ້ນຮຽນທີ 6", 'yDTbnlNtZbA')]), getItem('Team 12', 'rokGy0huYEA')]),
-  getItem('ມ.2', '267', <UserOutlined/>),
-
-  getItem('ມ.3', '3', <UserOutlined/>),
-  getItem('ມ.4', '4', <UserOutlined/>),
-  getItem('ມ.5', '5', <UserOutlined/>),
-  getItem('ມ.6', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('ມ.7', '7', <UserOutlined/>),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
+  getItem('ມ.1', '1', <UserOutlined />,[getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
   ]),
+  getItem('ມ.2', '267', <UserOutlined/>,[getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  ]),
+
+  getItem('ມ.3', '3', <UserOutlined/>, [getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  ]),
+  getItem('ມ.4', '4', <UserOutlined/>, [getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  ]),
+  getItem('ມ.5', '5', <UserOutlined/>, [getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  ]),
+  getItem('ມ.6', 'sub2', <TeamOutlined />, [getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  ]),
+  getItem('ມ.7', '7', <UserOutlined/>, [getItem('Unit_1', 'unit_1', <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]), 
+  getItem('Unit_2', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_3', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_4', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_5', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_6', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_7', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_8', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_9', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_10', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  getItem('Unit_11', 'rokGy0huYEA',  <PieChartOutlined />, [getItem("lesson 1", 'yDTbnlNtZbA'), getItem("lesson 2", 'yDTbnlNtZbA'),getItem("lesson 3", 'yDTbnlNtZbA')]),
+  ]),
+
 
   getItem('Learn Gramma', 'learn gramma', <FileOutlined />),
   getItem('🍻🍻🍻', '3VCwLvI5z10', <FileOutlined />),
@@ -62,38 +135,10 @@ const items = [
 export default function BasicExample() {
   return (
     <BrowserRouter>
-      {/* <div>
-      <nav>
-      <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/Error">Error</Link>
-          </li>
-          <li>
-            <Link to="/Abort">Abort</Link>
-          </li>
-          <li>
-            <Link to="/Print">Print</Link>
-          </li>
-          <li>
-            <Link to="/Complete">Complete</Link>
-          </li>
-          <li>
-            <Link to="/AnotherLink">Another Link</Link>
-          </li>
-        </ul>
-      </nav>
-      </div>
-      <hr /> */}
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="NounDetails/*" element={<App name="NounDetails" />} />
-        <Route path="Abort/*" element={<Abort />} />
-        <Route path="Print/*" element={<Print/>} />
-        <Route path="Complete/*" element={<Complete/>} />
-        <Route path="AnotherLink/*" element={<AnotherLink/>} /> 
+    
       </Routes>
     </BrowserRouter>
   );
@@ -110,9 +155,16 @@ const App = (props='') => {
   function set (){
    // setLecture("ddddddddddd");
   }
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   //const lecture = useLectureComponents('');
   const dispatch = useDispatch()
   const onClick = (e) =>{
+    if(e.key === 'learn gramma'){
+       openInNewTab('https://www.khanacademy.org/humanities/grammar')
+      return;
+    }
   //  setLecture(e.key)
   console.log( e.key);
     dispatch(switchLecture(e.key))
@@ -179,74 +231,7 @@ const App = (props='') => {
   );
 };
 
-//export default App;
 
 
-function Home() {
-  
-  return (
-    <div style={{textAlign: "center", backgroundColor: "#E1FFEE"}}>
-      <h2 >Test</h2>
-      <form action="/Complete">
-    
-        <label>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-        <label for="vehicle1"> I have a bike</label><br></br>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-        <label for="vehicle1"> I have a kite</label><br></br>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-        <label for="vehicle1"> I have a dog</label><br></br>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-        <label for="vehicle1"> I have a bird</label><br></br>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-        <label for="vehicle1"> I have a bike</label>
-        </label>
-        <br></br>
-        <br></br>
-            <Link to="/Complete"><button> Submit Test</button></Link>
-        
-      </form>
-    </div>
-  );
-}
 
-function Error() {
-  return (
-    <div>
-      <h2>Error</h2>
-    </div>
-  );
-}
 
-function Abort() {
-  return (
-    <div>
-      <h2>Abort</h2>
-    </div>
-  );
-}
-
-function Complete() {
-  return (
-    <div>
-      <h2>
-        Completed!!!
-      </h2>
-    </div>
-  );
-}
-function Print() {
-  console.log("console.log for printing ")
-  return (
-    <div>
-      <h2>Print</h2>
-    </div>
-  );
-}
-function AnotherLink() {
-  return (
-    <div>
-      <h2>Another Link</h2>
-    </div>
-  );
-}
