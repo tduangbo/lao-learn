@@ -1,0 +1,11 @@
+import { useState } from 'react'
+
+function useLectureComponents(friendID) {
+  const [lecture, setLecture] = useState(null);
+
+  // ...
+
+  return lecture;
+}
+
+export default useLectureComponents;

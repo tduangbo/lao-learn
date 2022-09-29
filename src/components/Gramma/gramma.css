@@ -1,0 +1,11 @@
+.gramma{
+    padding: 20px;
+    border-style: groove;
+    border-color: black;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px rgb(144, 149, 151);
+}
+h1{
+    font-size: 150%;
+    font-weight: bold;
+}
