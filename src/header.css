@@ -2,13 +2,13 @@
 .header {
     overflow: hidden;
     background-color: #f1f1f1;
-    padding: 30px 10px;
+    padding: 100px 10px;
     top: 0;
     position: relative;
     top:0;
 
     width: 100%;
-    background-image:url("../public/bug1.PNG");
+    background-image:url("../public/1995.jpg");
     /* position: fixed;
     top: 0;
     width: 100%; */
@@ -29,7 +29,7 @@
   /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
   .header a.logo {
     font-size: 25px;
-    color:  rgb(224, 227, 41);
+    color:  #fa08da;
     font-weight: bold;
   }
   
