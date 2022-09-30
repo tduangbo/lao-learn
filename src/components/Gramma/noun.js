@@ -26,12 +26,4 @@ function NounDetails(){
         </>
     )
 }
-
-// function onClick  () {
-
-// }
-
-
-  
-
 export default NounDetails
