@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
+//import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import './index.css';
 import './styles.css';
 import {
