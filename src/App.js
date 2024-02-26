@@ -170,9 +170,26 @@ const App = (props='') => {
   const dispatch = useDispatch()
   const onClick = (e) =>{
     if(e.key === 'learn gramma'){
-       openInNewTab('https://www.khanacademy.org/humanities/grammar')
-      return;
+      // openInNewTab('https://www.khanacademy.org/humanities/grammar', "_blank', 'noopener,noreferrer');")
+      // window.open('https://www.khanacademy.org/humanities/grammar', '_blank', 'noopener,noreferrer');
+       window.open('https://www.khanacademy.org/humanities/grammar', "_new","about:blank", "resizable=yes, scrollbars=yes, titlebar=yes, width=800, height=900, top=10, left=10");
+      // window.open('https://www.khanacademy.org/humanities/grammar','popup');
+      // window.open("https://www.mozilla.org/", "_blank", "mozillaWindow", "popup");
+      // window.open('https://www.mozilla.org/', '_blank');
+      // var redirectWindow = window.open('http://google.com', '_blank');
+       // eslint-disable-next-line no-unused-expressions
+      // redirectWindow.location;
+     // window.open('https://www.mozilla.org/', "myWindow", "width=500,height=400");//safari
+       return;
     }
+
+  // const onClick = (e) => {
+  //   if (e.key === 'learn gramma') {
+  //     window.open('https://www.mozilla.org/', '_blank');
+  //     return;
+  //   }
+  // };
+
   //  setLecture(e.key)
   console.log( e.key);
     dispatch(switchLecture(e.key))
@@ -233,6 +250,8 @@ const App = (props='') => {
           }}
         >
           Salavanh High School ©1995-96 Created by T Duangboudda
+          <a href="https://www.mozilla.org" target="_blank">Open Link</a>
+          {/* <button onclick="window.open('https://www.mozilla.org/', 'mozillaWindow')">Open Mozilla in New Window</button> */}
         </Footer>
       </Layout>
     </Layout>

@@ -12,7 +12,7 @@ import {
     Route,
     Link,
   } from "react-router-dom";
-  import { changeLecture } from '../../App';
+  import { changeLecture } from '../../App_v';
   import './gramma.css'
   import { useSelector, useDispatch } from 'react-redux'
 import { switchLecture } from './grammaSlice';
