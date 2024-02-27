@@ -10,6 +10,7 @@ import {
  import { useSelector, useDispatch } from 'react-redux'
 const SocketContext = createContext();
 
+
 const socket = io('http://localhost:5001');
 // const socket = io('https://my-express-app-one.azurewebsites.net/');
 
@@ -21,14 +22,41 @@ const ContextProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [call, setCall] = useState({});
   const [me, setMe] = useState('');
+  let peer2;
+  let peer1;
+ // const [peer2, setPeer2] = useState();
+ // const [peer1, setPeer1] = useState(null);
   const [clients, setConnectClients] = useState([]);
+ // const [myRef, setMyRef] = useState(null);
   // eslint-disable-next-line prefer-const
   let connectedClients = []; // Array to store connected clients
+  const remoteVideo = document.getElementById('remoteVideo');
   const myVideo = useRef(null);
-  const userVideo = useRef();
+  //const userVideo = useRef();
+  const useMyRef = useRef(null);
+// const useMyRef = (...refs) => {
+//   const refa = useRef(null);
+
+//   useEffect(() => {
+//     refs.forEach(ref => {
+//       if (!ref) return
+
+//       if (typeof ref === 'function') {
+//         ref(refa.current)
+//       } else {
+//         ref.current = refa.current
+//       }
+//     })
+//     // Do something with the ref here
+//   }, [refs]);
+
+//   return refa;
+// };
+
   const connectionRef = useRef();
  // socket.on('online', (_name, id) => {dispatch(connectedClients(connectedClients))})
   useEffect(() => {
+    console.log(useMyRef);
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
         console.log(currentStream)
@@ -72,64 +100,105 @@ const ContextProvider = ({ children }) => {
     });
 
     socket.on('callUser', ({ from, name: callerName, signal }) => {
+      console.log(`got call from ${from} to ${callerName}`);
       setCall({ isReceivingCall: true, from, name: callerName, signal });
     });
   }, []);
-
+ //let peer1;
   const answerCall = () => {
     setCallAccepted(true);
-
-    const peer = new Peer({ initiator: false, trickle: false, stream });
-
-    peer.on('signal', (data) => {
+   peer1 = new Peer({ initiator: false, trickle: false, stream });
+   console.log(peer1);
+  // setPeer1(peer1);
+    peer1.on('signal', (data) => {
       socket.emit('answerCall', { signal: data, to: call.from });
     });
 
-    peer.on('stream', (currentStream) => {
-      userVideo.current.srcObject = currentStream;
+    peer1.on('stream', (currentStream) => {
+     // console.log(currentStream);
+     // console.log(useMyRef )
+     // const remoteVideo = document.getElementById('remoteVideo');
+      console.log(remoteVideo);
+      remoteVideo.srcObject = currentStream;
+     // useMyRef.current.srcObject = currentStream;
     });
 
-    peer.signal(call.signal);
+    peer1.on("close", () => {
+      setCallAccepted(false);
+      setCallEnded(true);
+      setCall(null);
+      console.log("Connection with peer closed ----------------------------:(");
+    });
+    peer1.on('close', () => { console.log('peer closed'); socket.off("callAccepted"); });
+    peer1.signal(call.signal);
 
-    connectionRef.current = peer;
+    connectionRef.current = peer1;
+   // peer1.destroy();
   };
+  
 
+  
   const callUser = (id) => {
-    const peer = new Peer({ initiator: true, trickle: false, stream });
-    peer.on('connect', () => {
+    console.log('set call accepted to false');
+  
+    peer2 = new Peer({ initiator: true, trickle: false, stream });
+    console.log(peer2)
+  
+    peer2.on('connect', () => {
       console.log('Connected to peer!');
     });
+    peer2.on('disconnect', () => {
+      console.log('Disconnected from peer!');
+    });
 
-    peer.on('signal', (data) => {
-      console.log('peer is on signal!');
+    peer2.on("close", () => {
+      setCallAccepted(false);
+      setCallEnded(true);
+      setCall(null);
+      
+     leaveCall(null);
+    // leaveCall
+     //connectionRef.current.destroy();
+      console.log("Connection with peer closed ----------------------------:(");
+    });
+    peer2.on('close', () => { console.log('peer closed'); socket.off("callAccepted"); });
+
+    peer2.on('signal', (data) => {
+      console.log('peer is on signal!' + id);
       console.log(data);
       socket.emit('callUser', { userToCall: id, signalData: data, from: me, name });
     });
 
-    peer.on('stream', (currentStream) => {
-      userVideo.current.srcObject = currentStream;
+    peer2.on('stream', (currentStream) => {
+     
+      console.log(remoteVideo);
+      remoteVideo.srcObject = currentStream;
+     // useMyRef.current.srcObject = currentStream;
     });
 
     socket.on('callAccepted', (signal) => {
+      console.log('received answer ----------------------------' + signal);
+      console.log(signal);
+      console.log(peer2);
       setCallAccepted(true);
 
-      peer.signal(signal);
+      peer2.signal(signal);
     });
 
-    connectionRef.current = peer;
+    connectionRef.current = peer2;
   };
 
   function handleSuccess(newStream) {
     console.log(newStream);
     // setStream(newStream);
     // myVideo.current.srcObject = newStream;
-    userVideo.current.srcObject = newStream;
+    useMyRef.current.srcObject = newStream;
 
     // demonstrates how to detect that the user has stopped
     // sharing the screen via the browser UI.
     newStream.getVideoTracks()[0].addEventListener('ended', () => {
       console.log('The user has ended sharing the screen');
-      userVideo.current.srcObject = stream;
+      useMyRef.current.srcObject = stream;
     });
   }
 
@@ -168,11 +237,34 @@ const ContextProvider = ({ children }) => {
   };
 
   const leaveCall = () => {
+    console.log('leave call');
+    remoteVideo.srcObject = null;
+    
+
     setCallEnded(true);
+   // 
+   // connectionRef.current = null;
+   if(peer1){
+    console.log(peer1)
+    peer1.destroy();
+    peer1 = null;
+   }
+  
+   connectionRef.current.destroy();
+   connectionRef.current = null;
+      setCallAccepted(false);
+      // eslint-disable-next-line no-undef
+      //setCall({});
+ 
+  
+  
+    socket.emit('end-call', me);
+  
+   // peer2.destroy();
 
-    connectionRef.current.destroy();
+    
 
-    window.location.reload();
+   // window.location.reload();
   };
 
   return (
@@ -180,7 +272,7 @@ const ContextProvider = ({ children }) => {
       call,
       callAccepted,
       myVideo,
-      userVideo,
+      useMyRef,
       stream,
       name,
       connectedClients,
@@ -201,3 +293,4 @@ const ContextProvider = ({ children }) => {
 };
 
 export { ContextProvider, SocketContext };
+//https://github.com/olgeorge/react-electron-webrtc-phaser/blob/master/app/services/peerConnection.js
