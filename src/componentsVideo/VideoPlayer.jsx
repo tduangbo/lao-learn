@@ -36,8 +36,6 @@ const VideoPlayer = () => {
           <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
             <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
-            {/* <video id="localVideo" playsinline autoplay muted></video>
-            <video id="remoteVideo" playsinline autoplay></video> */}
           </Grid>
         </Paper>
       )}
@@ -47,7 +45,6 @@ const VideoPlayer = () => {
             <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{call?.name || 'Name'}</Typography>
             <video id="remoteVideo" playsInline autoPlay></video> 
-            {/* <video playsInline ref={useMyRef} autoPlay className={classes.video} /> */}
           </Grid>
         </Paper>
         }
