@@ -30,7 +30,7 @@ const ContextProvider = ({ children }) => {
  // const [myRef, setMyRef] = useState(null);
   // eslint-disable-next-line prefer-const
   let connectedClients = []; // Array to store connected clients
-  const remoteVideo = document.getElementById('remoteVideo');
+  let remoteVideo = document.getElementById('remoteVideo');
   const myVideo = useRef(null);
   //const userVideo = useRef();
   const useMyRef = useRef(null);
@@ -107,6 +107,7 @@ const ContextProvider = ({ children }) => {
  //let peer1;
   const answerCall = () => {
     setCallAccepted(true);
+    setCallEnded(false);
    peer1 = new Peer({ initiator: false, trickle: false, stream });
    console.log(peer1);
   // setPeer1(peer1);
@@ -118,6 +119,7 @@ const ContextProvider = ({ children }) => {
      // console.log(currentStream);
      // console.log(useMyRef )
      // const remoteVideo = document.getElementById('remoteVideo');
+     remoteVideo = document.getElementById('remoteVideo');
       console.log(remoteVideo);
       remoteVideo.srcObject = currentStream;
      // useMyRef.current.srcObject = currentStream;
@@ -139,8 +141,9 @@ const ContextProvider = ({ children }) => {
 
   
   const callUser = (id) => {
+   // setCallAccepted(true);
     console.log('set call accepted to false');
-  
+    setCallEnded(false);
     peer2 = new Peer({ initiator: true, trickle: false, stream });
     console.log(peer2)
   
@@ -153,7 +156,7 @@ const ContextProvider = ({ children }) => {
 
     peer2.on("close", () => {
       setCallAccepted(false);
-      setCallEnded(true);
+    
       setCall(null);
       
      leaveCall(null);
@@ -170,7 +173,7 @@ const ContextProvider = ({ children }) => {
     });
 
     peer2.on('stream', (currentStream) => {
-     
+      remoteVideo = document.getElementById('remoteVideo');
       console.log(remoteVideo);
       remoteVideo.srcObject = currentStream;
      // useMyRef.current.srcObject = currentStream;
@@ -181,6 +184,7 @@ const ContextProvider = ({ children }) => {
       console.log(signal);
       console.log(peer2);
       setCallAccepted(true);
+      setCallEnded(false);
 
       peer2.signal(signal);
     });
@@ -238,20 +242,24 @@ const ContextProvider = ({ children }) => {
 
   const leaveCall = () => {
     console.log('leave call');
-    remoteVideo.srcObject = null;
+   // remoteVideo.srcObject = null;
     
 
     setCallEnded(true);
    // 
    // connectionRef.current = null;
-   if(peer1){
-    console.log(peer1)
-    peer1.destroy();
-    peer1 = null;
-   }
+  //  if(peer1){
+  //   console.log(peer1)
+  //   peer1.destroy();
+  //   peer1 = null;
+  //  }
+  if(connectionRef.current){
+    connectionRef.current.destroy();
+    console.log('leave called -------')
+    connectionRef.current = null;
+  }
   
-   connectionRef.current.destroy();
-   connectionRef.current = null;
+
       setCallAccepted(false);
       // eslint-disable-next-line no-undef
       //setCall({});

@@ -42,13 +42,15 @@ const VideoPlayer = () => {
         </Paper>
       )}
      
-        <Paper className={classes.paper}>
-          <Grid item xs={12} md={6}>
+       {callAccepted&&
+          <Paper className={classes.paper}>
+            <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{call?.name || 'Name'}</Typography>
             <video id="remoteVideo" playsInline autoPlay></video> 
             {/* <video playsInline ref={useMyRef} autoPlay className={classes.video} /> */}
           </Grid>
         </Paper>
+        }
  
     </Grid>
   );
